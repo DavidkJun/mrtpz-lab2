@@ -254,3 +254,45 @@ class CircularLinkedList {
         return result.join(' -> ') + ' -> ' + this.head.data;
     }
 }
+
+// Приклади використання
+
+const list = new CircularLinkedList();
+console.log('Пустий список:', list.print());
+
+list.append('A');
+list.append('B');
+list.append('C');
+console.log('Після додавання A,B,C:', list.print()); // A -> B -> C -> A
+
+list.insert('X', 1);
+console.log('Після вставки X:', list.print()); // A -> X -> B -> C -> A
+
+const deleted = list.delete(2);
+console.log('Видалено:', deleted); // B
+console.log('Після видалення:', list.print()); // A -> X -> C -> A
+
+console.log('Перший X на позиції:', list.findFirst('X')); // 1
+console.log('Останній A на позиції:', list.findLast('A')); // 3
+
+list.deleteAll('A');
+console.log('Після видалення всіх A:', list.print()); // X -> C -> X
+
+console.log('Елемент на позиції 1:', list.get(1)); // C
+
+const copy = list.clone();
+console.log('Копія списку:', copy.print()); // X -> C -> X
+
+list.reverse();
+console.log('Реверснутий список:', list.print()); // X -> C -> X
+
+console.log('Довжина списку:', list.length()); // 2
+
+const otherList = new CircularLinkedList();
+otherList.append('Y');
+otherList.append('Z');
+list.extend(otherList);
+console.log('Після об\'єднання:', list.print()); // X -> C -> Y -> Z -> X
+
+list.clear();
+console.log('Після очищення:', list.print()); // Empty
