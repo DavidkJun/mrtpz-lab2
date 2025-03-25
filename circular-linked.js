@@ -240,4 +240,17 @@ class CircularLinkedList {
             current = current.next;
         } while (current !== elements.head);
     }
+    // Додатковий метод для візуалізації
+    print() {
+        if (!this.head) return 'Empty';
+
+        let result = [];
+        let current = this.head;
+        do {
+            result.push(current.data);
+            current = current.next;
+        } while (current !== this.head);
+
+        return result.join(' -> ') + ' -> ' + this.head.data;
+    }
 }
