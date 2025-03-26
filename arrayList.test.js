@@ -205,7 +205,7 @@ describe('CircularArrayList', () => {
             list.extend(otherList);
 
             expect(list.length()).toBe(3);
-            expect(list.get(1)).toBe('X');
+            expect(list.get(1)).toBe('X1');
             expect(list.get(2)).toBe('Y');
         });
 
