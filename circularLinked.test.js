@@ -56,6 +56,34 @@ describe('CircularLinkedList', () => {
            expect(() => list.delete(10)).toThrowError('Invalid index')
        })
    })
+   describe('Delete All', () => {
+       it('should return a list with all occurrences of certain elements deleted', () => {
+           list.append('A')
+           list.append('B')
+           list.append('C')
+           list.append('B')
+           list.deleteAll('B')
+
+           expect(list.length()).toBe(2)
+           expect(list.get(0)).toBe('A')
+           expect(list.get(1)).toBe('C')
+       })
+   })
+   describe('Get', () => {
+       it('should return the index of element we looking for', () => {
+           list.append('A')
+           list.append('B')
+
+           expect(list.get(0)).toBe('A')
+           expect(list.get(1)).toBe('B')
+       });
+   })
+   describe('Get', () => {
+       it('should throw an Error because of wrong index', () => {
+           expect(() => list.get(-1)).toThrowError('Invalid index')
+           expect(() => list.get(10)).toThrowError('Invalid index')
+       })
+   })
 })
 
 
