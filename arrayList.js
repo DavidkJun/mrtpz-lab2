@@ -1,4 +1,4 @@
-class CircularArrayList {
+export class CircularArrayList {
     constructor() {
         this.items = [];
     }
@@ -80,3 +80,30 @@ class CircularArrayList {
         return this.items.join(' -> ') + ' -> ' + this.items[0];
     }
 }
+
+const list = new CircularArrayList();
+list.append('A');
+list.append('B');
+list.append('C');
+console.log(list.print()); // A -> B -> C -> A
+
+list.insert('X', 1);
+console.log(list.print()); // A -> X -> B -> C -> A
+
+list.reverse();
+console.log(list.print()); // C -> B -> X -> A -> C
+
+const copy = list.clone();
+console.log(copy.print()); // C -> B -> X -> A -> C
+
+console.log(list.findFirst('B')); // 1
+console.log(list.findLast('C')); // 0
+
+list.deleteAll('X');
+console.log(list.print()); // C -> B -> A -> C
+
+const otherList = new CircularArrayList();
+otherList.append('Y');
+otherList.append('Z');
+list.extend(otherList);
+console.log(list.print()); // C -> B -> A -> Y -> Z -> C
