@@ -138,6 +138,33 @@ describe('CircularLinkedList', () => {
            expect(list.findLast('UJd')).toBe(-1)
        });
    })
+   describe('Clear', () => {
+       it('should return cleared list', () => {
+           list.append('A')
+           list.append('B')
+           list.append('C')
+           list.clear()
+
+           expect(list.length()).toBe(0)
+       });
+   })
+   describe('Extend', () => {
+       it('should return list extend with new elements', () => {
+           list.append('A')
+           list.append('B')
+           list.append('C')
+
+           let otherList= new List()
+           otherList.append('D')
+           otherList.append('E')
+
+           list.extend(otherList)
+
+           expect(list.length()).toBe(5)
+           expect(list.get(3)).toBe('D')
+           expect(list.get(4)).toBe('E')
+       });
+   })
 })
 
 
