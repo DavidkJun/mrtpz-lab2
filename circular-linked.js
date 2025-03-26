@@ -256,11 +256,13 @@ class CircularLinkedList {
 }
 
 // Приклади використання
-
+/*
 const list = new CircularLinkedList();
 console.log('Пустий список:', list.print());
 
 list.append('A');
+console.log(list)
+
 list.append('B');
 list.append('C');
 console.log('Після додавання A,B,C:', list.print()); // A -> B -> C -> A
@@ -296,3 +298,6 @@ console.log('Після об\'єднання:', list.print()); // X -> C -> Y ->
 
 list.clear();
 console.log('Після очищення:', list.print()); // Empty
+*/
+
+module.exports.List = CircularLinkedList;
