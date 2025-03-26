@@ -110,6 +110,34 @@ describe('CircularLinkedList', () => {
            expect(list.get(2)).toBe('A')
        });
    })
+   describe('Find First', () => {
+       it('should return the first occurrence of element we looking for', () => {
+           list.append('B')
+           list.append('C')
+           list.append('A')
+           list.append('B')
+           list.append('J')
+           list.append('A')
+
+           expect(list.findFirst('A')).toBe(2)
+           expect(list.findFirst('B')).toBe(0)
+           expect(list.findFirst('UJd')).toBe(-1)
+       });
+   })
+   describe('Find last', () => {
+       it('should return the last occurrence of element we looking for', () => {
+           list.append('B')
+           list.append('C')
+           list.append('A')
+           list.append('B')
+           list.append('J')
+           list.append('A')
+
+           expect(list.findLast('A')).toBe(5)
+           expect(list.findLast('B')).toBe(3)
+           expect(list.findLast('UJd')).toBe(-1)
+       });
+   })
 })
 
 
