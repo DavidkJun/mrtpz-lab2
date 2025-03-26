@@ -84,6 +84,32 @@ describe('CircularLinkedList', () => {
            expect(() => list.get(10)).toThrowError('Invalid index')
        })
    })
+   describe('Clone', () => {
+       it('should return the clone of the list', () => {
+           list.append('A')
+           list.append('C')
+           list.append('D')
+           let newList = list.clone()
+
+           expect(newList.length()).toBe(3)
+           expect(newList.get(0)).toBe('A')
+           expect(newList.get(1)).toBe('C')
+           expect(newList.get(2)).toBe('D')
+       });
+   })
+   describe('Reverse', () => {
+       it('should return the reversed list', () => {
+           list.append('A')
+           list.append('B')
+           list.append('C')
+           list.reverse()
+
+           expect(list.length()).toBe(3)
+           expect(list.get(0)).toBe('C')
+           expect(list.get(1)).toBe('B')
+           expect(list.get(2)).toBe('A')
+       });
+   })
 })
 
 
