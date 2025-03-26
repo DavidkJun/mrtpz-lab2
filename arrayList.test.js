@@ -206,7 +206,7 @@ describe('CircularArrayList', () => {
 
             expect(list.length()).toBe(3);
             expect(list.get(1)).toBe('X');
-            expect(list.get(2)).toBe('Y1');
+            expect(list.get(2)).toBe('Y');
         });
 
         it('should not modify list when extending with empty list', () => {
