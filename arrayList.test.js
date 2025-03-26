@@ -199,7 +199,7 @@ describe('CircularArrayList', () => {
         it('should extend list with another list', () => {
             const otherList = new CircularArrayList();
             otherList.append('X');
-            otherList.append('Y1');
+            otherList.append('Y');
 
             list.append('A');
             list.extend(otherList);
